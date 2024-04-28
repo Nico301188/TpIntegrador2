@@ -1,0 +1,18 @@
+
+.cart-modal__container {
+    min-height: 3rem;
+    border-bottom: 1px solid $terciary-color;
+    margin: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    h2 {
+        font-size: $font-size-lg;
+    }
+    img{
+        border: 0.1rem solid $black;
+        border-radius: 1rem;
+        height: 10%;
+        width: 10%;
+    }
+}

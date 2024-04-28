@@ -1,0 +1,24 @@
+
+.footer__container{
+    background-color: $secondary-color;
+    height: $footer-height;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    .footer__wrapper{
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        margin: 0 10%;
+        
+        h2 {
+            font-weight: 300;
+            font-size: 1rem;
+            margin: 0;
+        }
+        p {
+            margin: 0;
+        }
+    }
+}

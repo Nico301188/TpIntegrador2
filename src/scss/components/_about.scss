@@ -1,0 +1,25 @@
+
+.banner-us {
+    background-image: url('../../images/nosotros.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 87.11vh;
+    background-position-x: 50%;
+    background-position-y: 50%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+  .banner-us .tittle-us {
+    background-color: $terciary-color;
+    color: $typography-color;
+    font-size: $font-size-xxl;
+  }
+  .banner-us .text-us {
+    background-color: $terciary-color;
+    color: $typography-color;
+    font-size: $font-size-lg;
+  }
+
+  
