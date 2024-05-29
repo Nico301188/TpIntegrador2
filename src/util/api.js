@@ -2,7 +2,8 @@ import axios from "axios";
 
 const axiosInstance = axios.create({
     // baseURL: "https://65f8d55edf15145246101010.mockapi.io/api/"
-    baseURL: "https://66044fc62393662c31d126a2.mockapi.io/"
+    // baseURL: "https://66044fc62393662c31d126a2.mockapi.io/"
+    baseURL: process.env.REACT_APP_BASE_URL_API
 })
 
 export const getProducts = async () => {
