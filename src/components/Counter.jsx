@@ -6,27 +6,27 @@ import { CartContext } from '../context/CartContext';
 import Text from './Text'
 import Button from './Button'
 
-export default function Counter({ id, productData, initialValue = 0 }) {
+export default function Counter({ _id, productData, initialValue = 0 }) {
 
     const [count, setCount] = useState(initialValue)
     const { addProduct, removeProduct, productsCartList } = useContext(CartContext);
 
     useEffect(() => {
-        const product = productsCartList.find(product => product.id === id)
+        const product = productsCartList.find(product => product.productData._id === _id)
         setCount(product?.quantity || 0)
-    }, [productsCartList])
+    }, [productsCartList, _id])
 
     const decrement = e => {
         e.stopPropagation()
         if (count > 0) setCount(count - 1)
-        removeProduct(id)
+        removeProduct(_id)
     }
 
     const increment = e => {
         e.stopPropagation()
         setCount(count + 1)
         addProduct({
-            id,
+            _id,
             productData,
             quantity: count + 1,
         })
