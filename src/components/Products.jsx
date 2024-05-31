@@ -3,7 +3,6 @@ import Cards from "./Cards"
 import { getProducts } from "../util/api"
 
 
-
 function Products() {
 
     const [products, setProducts] = useState([])
