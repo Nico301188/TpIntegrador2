@@ -16,7 +16,7 @@ const INITIAL_STATE = {
     longDesc: "",
     ageFrom: 0,
     ageTo: 0,
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDRbZbkhT3GNPpYYrzDk36V-dhPcmB6MdccFbx9wDhig&s",
+    // img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDRbZbkhT3GNPpYYrzDk36V-dhPcmB6MdccFbx9wDhig&s",
 }
 
 function Register() {
@@ -68,7 +68,8 @@ function Register() {
         },
         img: {
             inputLabel: "Foto del producto",
-            inputType: "file"
+            inputType: "file",
+            accept: "image/*"
         }
     }
 
