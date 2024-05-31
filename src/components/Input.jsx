@@ -38,7 +38,8 @@ function Input({
                         type={inputType}
                         onChange={validatedOnChange}
                         value={inputType !== "file" ? values[id] : ""}
-                        className={`input-group__input${error ? " error" : ""}`} />
+                        className={`input-group__input${error ? " error" : ""}`} 
+                        {...props}/>
             }
             <span className='input-group__text-error'>{error}</span>
         </div>
