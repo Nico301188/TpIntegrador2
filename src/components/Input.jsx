@@ -6,7 +6,8 @@ function Input({
     inputType = "text",
     onChange = () => {},
     validation = () => "",
-    values
+    values,
+    ...props
 }) {
 
     const [error, setError] = useState("")
@@ -28,6 +29,7 @@ function Input({
                         onChange={validatedOnChange}
                         value={values[id]}
                         className={`input-group__input${error ? " error" : ""}`}
+                        {...props}
                     ></textarea>
                 :
                     <input 
