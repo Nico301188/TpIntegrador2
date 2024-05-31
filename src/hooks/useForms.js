@@ -3,13 +3,12 @@ import { useState } from "react";
 export const useForm = (INITIAL_STATE) => {
 
     const [values, setValues] = useState(INITIAL_STATE);
-
+    
     const handleInputChange = e => {
         if (e.target.type === "file") {
             setValues({
                 ...values,
                 [e.target.name]: e.target.files[0]
-                //[e.target.name]: e.target.inputLabel === "Edad hasta" ? e.target.value : e.target.value
             })
         } else {
             setValues({
