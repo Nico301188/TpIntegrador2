@@ -23,6 +23,7 @@ export const postMessage = async body => {
 //     return resp.data;
 // } 
 export const postProducts = async body => {
+    console.log(body)
     const formData = new FormData()
     Object.entries(body).forEach(([key, value]) => {
         formData.append(key, value)
