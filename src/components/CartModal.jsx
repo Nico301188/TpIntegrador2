@@ -1,7 +1,7 @@
 import React from 'react'
 import Counter from './Counter'
 
-function CartModal({id, productData, quantity}) {
+function CartModal({id, productData, quantity, edit = true}) {
 
     return (
         <div className='cart-modal__container'>
@@ -13,11 +13,14 @@ function CartModal({id, productData, quantity}) {
             <p>{productData.price * quantity}</p>
             <p>{productData.category}</p>
             {/* <p>{productData.freeDeliver}</p> */}
-            <Counter 
-                id={id} 
-                productData={productData}
-                initialValue={quantity}
-                />
+            {
+                edit ?
+                <Counter 
+                    _id={productData._id} 
+                    productData={productData}
+                    initialValue={quantity}
+                    />: undefined
+            }
         </div>
 
     )
