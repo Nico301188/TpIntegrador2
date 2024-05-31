@@ -49,7 +49,7 @@ function Cart() {
                             data =>
                                 <CartModal
                                     // key={data.id}
-                                    key={dataproduct._id}
+                                    key={data.product._id}
                                     {...data}
                                 />
                         )
