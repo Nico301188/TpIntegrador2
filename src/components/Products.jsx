@@ -24,7 +24,7 @@ function Products() {
                     products.map(
                         product =>
                             <Cards 
-                                key={product.id}
+                                key={product._id}
                                 {...product}
                             />
                     )
