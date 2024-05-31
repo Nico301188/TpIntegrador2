@@ -1,5 +1,6 @@
 import { useContext, useState } from "react"
-import { faClose, faShoppingCart } from "@fortawesome/free-solid-svg-icons"
+import { faClose, faDollar, faShoppingCart } from "@fortawesome/free-solid-svg-icons"
+import { useNavigate } from "react-router-dom";
 
 import { CartContext } from "../context/CartContext"
 
@@ -9,6 +10,7 @@ import CartModal from "./CartModal"
 
 function Cart() {
     const { productsCartList } = useContext(CartContext);
+    const navigate = useNavigate()
     const [open, setOpen] = useState(false)
 
     return (
@@ -16,7 +18,7 @@ function Cart() {
             <div className="cart__container">
                 <Button
                     icon={faShoppingCart}
-                    className= {productsCartList.length ? "cart__navbar-button-in": "cart__navbar-button"}
+                    className={productsCartList.length ? "cart__navbar-button-in" : "cart__navbar-button"}
                     action={() => setOpen(!open)}
                     disabled={!productsCartList.length}
                 />
@@ -30,27 +32,39 @@ function Cart() {
                                 )}
                             </span>
                         </div>
-                    : undefined 
+                        : undefined
                 }
             </div>
-            <Modal show={open} onClose={()=>setOpen(false)}>
+            <Modal show={open} onClose={() => setOpen(false)}>
                 <>
-                <div className="modal__header">
-                    <Button
-                        icon={faClose}
-                        className="modal__close"
-                        action={() => setOpen(!open)}
-                    />
-                </div>
-                {
+                    <div className="modal__header">
+                        <Button
+                            icon={faClose}
+                            className="modal__close"
+                            action={() => setOpen(!open)}
+                        />
+                    </div>
+                    {
                         productsCartList.map(
                             data =>
                                 <CartModal
-                                    key={data.id}
+                                    // key={data.id}
+                                    key={dataproduct._id}
                                     {...data}
                                 />
                         )
                     }
+                    <div id="wallet_container" className="modal__footer">
+                        <Button
+                            icon={faDollar}
+                            className="modal__btn-buy"
+                            label="Comprar"
+                            action={() => {
+                                navigate("/checkout")
+                                setOpen(!open)
+                            }}
+                        />
+                    </div>
                 </>
             </Modal>
         </>
