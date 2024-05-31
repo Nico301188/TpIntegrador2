@@ -1,9 +1,8 @@
 import React from "react"
 import Counter from "./Counter"
 
-
 function Cards({
-    id,
+    _id,
     name,
     price,
     stock,
@@ -27,23 +26,23 @@ function Cards({
                 <b>{category}</b><br />
                 <b>$ {price}</b>
                 <p>Edad: {ageFrom} - {ageTo}</p>
-                {/* <p>{sDescription}</p> */}
                 <p>{lDescription}</p>
                 <span> Envio:{freeDeliver ? <span className="free__deliver"> Sin cargo.</span> : " Con cargo"}
                 </span>
                 <p>Stock Disponible: {stock}</p>
             </div>
             <Counter
-                id={id}
-                productData={{
-                    name,
-                    photo,
-                    category,
-                    brand,
-                    price,
-                    sDescription,
-                    freeDeliver
-                }}
+            _id={_id}
+                // id={id}
+                // productData={{
+                //     name,
+                //     photo,
+                //     category,
+                //     brand,
+                //     price,
+                //     sDescription,
+                //     freeDeliver
+                // }}
                 />
         </div>
     )
