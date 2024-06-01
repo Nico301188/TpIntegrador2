@@ -5,7 +5,7 @@ function CartModal({id, productData, quantity, edit = true}) {
 
     return (
         <div className='cart-modal__container'>
-            <img src={productData.photo} alt={productData.sDescription} />
+            <img src={productData.imgUrl} alt={productData.sDescription} />
             <h2>
                 {productData.name}
             </h2>
