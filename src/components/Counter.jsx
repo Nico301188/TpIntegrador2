@@ -12,7 +12,7 @@ export default function Counter({ _id, productData, initialValue = 0 }) {
     const { addProduct, removeProduct, productsCartList } = useContext(CartContext);
 
     useEffect(() => {
-        const product = productsCartList.find(product => product.productData._id === _id)
+        const product = productsCartList.find(product => product.product._id === _id)
         setCount(product?.quantity || 0)
     }, [productsCartList, _id])
 
