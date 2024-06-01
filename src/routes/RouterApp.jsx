@@ -7,6 +7,7 @@ import Home from "../pages/Home"
 import Contact from "../pages/Contact"
 import Register from "../pages/Register"
 import About from "../pages/Aboutus"
+import Checkout from "../pages/Checkout"
 
 function RouterApp() {
     return (
@@ -16,6 +17,7 @@ function RouterApp() {
                 <Route path="/" element={<Home />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/Register" element={<Register />} />
+                <Route path="/checkout" element={<Checkout />} />
                 <Route path="/Aboutus" element={<About />} />
             </Routes>
              <Footer />
