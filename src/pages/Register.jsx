@@ -2,9 +2,8 @@ import React from 'react'
 import FormLayout from '../layout/FormLayout'
 
 import { postProducts } from '../util/api'
-import { validatShort, validateLong, validatePrice, validateStock
+import { validatShort, validateLong, validatePrice, validateStock } from '../util/about-validation'
     // ,validateAgeFrom, validateAgeTo
-    } from '../util/about-validation'
 
 const INITIAL_STATE = {
     name: "",
@@ -12,8 +11,8 @@ const INITIAL_STATE = {
     stock: 0,
     brand: "",
     category: "",
-    shortDesc: "",
-    longDesc: "",
+    sDescription: "",
+    lDescription: "",
     ageFrom: 0,
     ageTo: 0,
     // img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDRbZbkhT3GNPpYYrzDk36V-dhPcmB6MdccFbx9wDhig&s",
@@ -52,7 +51,7 @@ function Register() {
             inputType: "textarea",
             validation: validateLong
         },
-        delivery: {
+        freeDeliver: {
             inputLabel: "Envío sin cargo",
             inputType: "checkbox"
         },
