@@ -1,51 +1,51 @@
-import React, { useContext, useEffect, useState } from 'react'
-import { Wallet } from '@mercadopago/sdk-react';
+// import React, { useContext, useEffect, useState } from 'react'
+// import { Wallet } from '@mercadopago/sdk-react';
 
-import { CartContext } from '../context/CartContext';
-import CartItem from '../components/Cart';
+// import { CartContext } from '../context/CartContext';
+// import CartItem from '../components/Cart';
 
-import { postPreferenceMP } from '../util/api';
+// import { postPreferenceMP } from '../util/api';
 
-function Checkout() {
-    const [prefId, setPrefId] = useState("")
-    const { productsCartList } = useContext(CartContext);
+// function Checkout() {
+//     const [prefId, setPrefId] = useState("")
+//     const { productsCartList } = useContext(CartContext);
 
-    useEffect(() => {
-        console.log(productsCartList)
-        const itemsList = productsCartList.map(({product, quantity}) => ({
-            id: product._id,
-            title: product.title,
-            picture_url: product.imgUrl,
-            quantity: quantity,
-            unit_price: product.price
-        }))
-        postPreferenceMP({
-            items: itemsList
-        })
-            .then( data => setPrefId(data.preferenceId))
-            .catch(console.log)
-    }, [productsCartList])
+//     useEffect(() => {
+//         console.log(productsCartList)
+//         const itemsList = productsCartList.map(({product, quantity}) => ({
+//             id: product._id,
+//             title: product.title,
+//             picture_url: product.imgUrl,
+//             quantity: quantity,
+//             unit_price: product.price
+//         }))
+//         postPreferenceMP({
+//             items: itemsList
+//         })
+//             .then( data => setPrefId(data.preferenceId))
+//             .catch(console.log)
+//     }, [productsCartList])
     
 
-    return (
-        <div>
-            {
-                productsCartList.map(
-                    data =>
-                        <CartItem
-                            key={data.product._id}
-                            {...data}
-                            edit={false}
-                        />
-                )
-            }
-            {
-                prefId ?
-                    <Wallet initialization={{ preferenceId: prefId }} customization={{ texts:{ valueProp: 'smart_option'}}} />
-                : undefined
-            }
-        </div>
-    )
-}
+//     return (
+//         <div>
+//             {
+//                 productsCartList.map(
+//                     data =>
+//                         <CartItem
+//                             key={data.product._id}
+//                             {...data}
+//                             edit={false}
+//                         />
+//                 )
+//             }
+//             {
+//                 prefId ?
+//                     <Wallet initialization={{ preferenceId: prefId }} customization={{ texts:{ valueProp: 'smart_option'}}} />
+//                 : undefined
+//             }
+//         </div>
+//     )
+// }
 
-export default Checkout
+// export default Checkout
