@@ -42,11 +42,13 @@ function Register() {
         category: {
             inputLabel: "Categoria",
         },
-        shortDesc: {
+        // shortDesc:
+        sDescription: {
             inputLabel: "Descripción corta",
             validation: validatShort
         },
-        longDesc: {
+        // longDesc:
+         lDescription:{
             inputLabel: "Descripción larga",
             inputType: "textarea",
             validation: validateLong
