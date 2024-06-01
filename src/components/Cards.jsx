@@ -13,14 +13,16 @@ function Cards({
     freeDeliver,
     ageFrom,
     ageTo,
-    photo
+    imgUrl
+    // photo
 }) {
 
     
 
     return (
         <div className="card__container">
-            <img src={photo} alt={sDescription} />
+            {/* <img src={photo} alt={sDescription} /> */}
+            <img src={imgUrl} alt={sDescription} />
             <div className='card__data'>
                 <h2>{name} <span>({brand})</span></h2>
                 <b>{category}</b><br />
