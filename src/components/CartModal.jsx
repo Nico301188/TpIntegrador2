@@ -1,23 +1,23 @@
 import React from 'react'
 import Counter from './Counter'
 
-function CartModal({id, productData, quantity, edit = true}) {
+function CartModal({ product, quantity, edit = true}) {
 
     return (
         <div className='cart-modal__container'>
-            <img src={productData.imgUrl} alt={productData.sDescription} />
+            <img src={product.imgUrl} alt={product.sDescription} />
             <h2>
-                {productData.name}
+                {product.name}
             </h2>
-                <span>({productData.brand})</span>
-            <p>{productData.price * quantity}</p>
-            <p>{productData.category}</p>
+                <span>({product.brand})</span>
+            <p>{product.price * quantity}</p>
+            <p>{product.category}</p>
             {/* <p>{productData.freeDeliver}</p> */}
             {
                 edit ?
                 <Counter 
-                    _id={productData._id} 
-                    productData={productData}
+                    _id={product._id} 
+                    product={product}
                     initialValue={quantity}
                     />: undefined
             }
