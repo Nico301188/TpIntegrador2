@@ -66,7 +66,7 @@ function Register() {
             inputType: "number",
             // validation: validateAgeTo
         },
-        img: {
+        image: {
             inputLabel: "Foto del producto",
             inputType: "file",
             accept: "image/*"
