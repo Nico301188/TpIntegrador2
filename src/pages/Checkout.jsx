@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Wallet } from '@mercadopago/sdk-react';
 
 import { CartContext } from '../context/CartContext';
-import CartItem from '../components/CartItem';
+import CartItem from '../components/Cart';
 
 import { postPreferenceMP } from '../util/api';
 
