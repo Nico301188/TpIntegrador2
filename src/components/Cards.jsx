@@ -25,6 +25,7 @@ function Cards({
             <img src={imgUrl} alt={sDescription} />
             <div className='card__data'>
                 <h2>{name} <span>({brand})</span></h2>
+                <p>{sDescription}</p>
                 <b>{category}</b><br />
                 <b>$ {price}</b>
                 <p>Edad: {ageFrom} - {ageTo}</p>
