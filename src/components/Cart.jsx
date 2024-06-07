@@ -7,7 +7,7 @@ import { CartContext } from "../context/CartContext"
 import Button from "./Button";
 import Modal from "./Modal";
 import CartModal from "./CartModal"
-import { Wallet } from "@mercadopago/sdk-react";
+// import { Wallet } from "@mercadopago/sdk-react";
 
 function Cart() {
     const { productsCartList } = useContext(CartContext);
@@ -64,10 +64,6 @@ function Cart() {
                                 navigate("/checkout")
                                 setOpen(!open)
                             }}
-                        />
-                        <Wallet
-                            initialization={{preferenceId:'wallet_container'}}
-                            customization={{texts:{calueProp:'smart_option'}}}
                         />
                     </div>
                 </>

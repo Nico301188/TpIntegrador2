@@ -26,7 +26,6 @@ function Checkout() {
             .catch(console.log)
     }, [productsCartList])
     
-
     return (
         <div>
             {
