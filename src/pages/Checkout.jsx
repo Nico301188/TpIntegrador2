@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Wallet } from '@mercadopago/sdk-react';
 
 import { CartContext } from '../context/CartContext';
-import CartItem from '../components/Cart';
+// import CartItem from '../components/Cart';
 
 import { postPreferenceMP } from '../util/api';
 
@@ -31,12 +31,31 @@ function Checkout() {
             {
                 productsCartList.map(
                     data =>
-                        <CartItem
-                            key={data.product._id}
-                            {...data}
-                            edit={false}
-                        />
+                        // <CartItem
+                        //     key={data.product._id}
+                        //     {...data}
+                        //     edit={false}
+                        // />
+                        <div className='cart-modal__container'>
+            <img src={data.product.imgUrl} alt={data.product.sDescription} />
+            <h2>
+                {data.product.name}
+            </h2>
+                <span>({data.product.brand})</span>
+            <p>{data.product.price * data.quantity}</p>
+            <p>{data.product.category}</p>
+            {/* <p>{productData.freeDeliver}</p> */}
+            {/* {
+                edit ?
+                <Counter 
+                    _id={product._id} 
+                    product={product}
+                    initialValue={quantity}
+                    />: undefined
+            } */}
+        </div>
                 )
+
             }
             {
                 prefId ?
