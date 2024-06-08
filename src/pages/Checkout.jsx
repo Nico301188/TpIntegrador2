@@ -44,7 +44,7 @@ function Checkout() {
                 <span>({data.product.brand})</span>
             <p>{data.product.price * data.quantity}</p>
             <p>{data.product.category}</p>
-            <p>{data.productData.freeDeliver}</p>
+            <p>{data.product.freeDeliver}</p>
             {/* {
                 edit ?
                 <Counter 
