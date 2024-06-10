@@ -53,7 +53,7 @@ function Checkout({product, quantity}) {
                 )
 
             }
-            <div>
+            <div className='cart-modal__container'>
             {
                 prefId ?
                     <Wallet initialization={{ preferenceId: prefId }} customization={{ texts: { valueProp: 'smart_option' } }} />
