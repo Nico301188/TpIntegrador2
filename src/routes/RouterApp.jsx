@@ -8,6 +8,7 @@ import Contact from "../pages/Contact"
 import Register from "../pages/Register"
 import About from "../pages/Aboutus"
 import Checkout from "../pages/Checkout"
+import Success from "../pages/Success"
 
 function RouterApp() {
     return (
