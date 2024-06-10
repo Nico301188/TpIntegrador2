@@ -19,6 +19,7 @@ function RouterApp() {
                 <Route path="/Register" element={<Register />} />
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/Aboutus" element={<About />} />
+                <Route path="/checkout/success" element={<Success />} />
             </Routes>
              <Footer />
         </BrowserRouter>
