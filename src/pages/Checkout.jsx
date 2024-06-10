@@ -2,10 +2,11 @@ import React, { useContext, useEffect, useState } from 'react'
 import { Wallet } from '@mercadopago/sdk-react';
 
 import { CartContext } from '../context/CartContext';
+// import CartItem from '../components/Cart';
 
 import { postPreferenceMP } from '../util/api';
 
-function Checkout({product, quantity}) {
+function Checkout() {
     const [prefId, setPrefId] = useState("")
     const { productsCartList } = useContext(CartContext);
 
@@ -28,32 +29,22 @@ function Checkout({product, quantity}) {
     return (
         <div>
             {
-                // productsCartList.map(
-                    // data =>
-                        // <div className='cart-modal__container'>
-                        //     <img src={data.product.imgUrl} alt={data.product.sDescription} />
-                        //     <h2>
-                        //         {data.product.name}
-                        //     </h2>
-                        //     <span>({data.product.brand})</span>
-                        //     <p>{data.product.price * data.quantity}</p>
-                        //     <p>{data.product.category}</p>
-                        //     <p>{data.product.freeDeliver}</p>
-                        // </div>
-                                <div className='cart-modal__container'>
-                                <img src={product.imgUrl} alt={product.sDescription} />
-                                <h2>
-                                    {product.name}
-                                </h2>
-                                <span>({product.brand})</span>
-                                <p>{product.price * quantity}</p>
-                                <p>{product.category}</p>
-                                <p>{product.freeDeliver}</p>
-                            </div>
-                // )
+                productsCartList.map(
+                    data =>
+                        <div className='cart-modal__container'>
+                            <img src={data.product.imgUrl} alt={data.product.sDescription} />
+                            <h2>
+                                {data.product.name}
+                            </h2>
+                            <span>({data.product.brand})</span>
+                            <p>{data.product.price * data.quantity}</p>
+                            <p>{data.product.category}</p>
+                            <p>{data.product.freeDeliver}</p>
+                        </div>
+                )
 
             }
-            <div className='cart-modal__mp'>
+            <div>
             {
                 prefId ?
                     <Wallet initialization={{ preferenceId: prefId }} customization={{ texts: { valueProp: 'smart_option' } }} />
