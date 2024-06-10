@@ -28,7 +28,7 @@ function Checkout({product, quantity}) {
     return (
         <div>
             {
-                productsCartList.map(
+                // productsCartList.map(
                     // data =>
                         // <div className='cart-modal__container'>
                         //     <img src={data.product.imgUrl} alt={data.product.sDescription} />
@@ -50,7 +50,7 @@ function Checkout({product, quantity}) {
                                 <p>{product.category}</p>
                                 <p>{product.freeDeliver}</p>
                             </div>
-                )
+                // )
 
             }
             <div className='cart-modal__mp'>
