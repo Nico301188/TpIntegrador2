@@ -1,3 +1,10 @@
+# variables de entorno.
+generar un archivo .env con las siguientes variables.
+
+```
+REACT_APP_BASE_URL_API="mongodb+srv://nico301188:EduIt2024@products.kjpndol.mongodb.net/products"
+REACT_APP_MP_PUBLIC_KEY=TEST-337860e4-3752-46eb-a717-7b6a59ceb852
+```
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
